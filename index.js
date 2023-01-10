@@ -87,32 +87,42 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-var totalProfitOrLoss = 0;
-var totalChanges = 0;
-var minValue = Infinity;
-var maxValue = -Infinity;
-var minIndex;
-var maxIndex;
-var currentChange;
+var totalProfitOrLoss = 0; // sum of the profit or loss for the whole period
+var totalChanges = 0; // sum of the profit-loss differences between one month and the next
+var minValue = Infinity; // holds the least value of the profit-loss difference found... updated as we loop over the dataset. initially set to the max value possible (infinity) to cater for all data
+var maxValue = -Infinity; // holds the greatest value of the profit-loss difference found... updated as we loop over the dataset. initially set to the min value possible (-infinity) to cater for all data
+var minIndex; // holds the index of where the least value was found
+var maxIndex; // holds the index of where the greatest value is found
+var currentChange; // the current change value as we loop through the dataset
 
-for (var i=0;i<finances.length-1; i++) {
-    totalProfitOrLoss += finances[i][1];
-    currentChange = (finances[i+1][1]-finances[i][1]);
-    totalChanges += currentChange;
+/*  
+    we need to loop through the dataset...BUT since we are comparing the current value with the 
+    next one, we need to ensure that we test for that condition and do nothing at the penultimate end of the dataset
+    except accumulate the total profit or loss!
+*/
+for (var i=0;i<finances.length; i++) {
+    totalProfitOrLoss += finances[i][1]; //accumulate all the values in the dataset
 
-    // find minimum value and record its index
+    // this is how we will ensure that we don't go past max limit of the array
+    // remember, the loop index is incremented at the end and the check is at the beginning!
+    // so we need to stop at 2 index values before the end in the loop!
+    if (i <= finances.length-2){
+        currentChange = (finances[i+1][1]-finances[i][1]);
+        totalChanges += currentChange;
+    }
+    // find minimum value and record its index - the index of the following month, not the current one!
     if (currentChange < minValue) {
         minValue = currentChange;
         minIndex = i+1;
     }           
-    // find maximum value and rrecord its index
+    // find maximum value and record its index (the index of the following month!)
     if (currentChange > maxValue) {
         maxValue = currentChange;
         maxIndex = i+1;      
     }
 }
 
-
+// now we all the relevant information... we can print out the financial analysis required!
 console.log("Financial Analysis");
 console.log("------------------------------");
 console.log("Total Months:", finances.length);

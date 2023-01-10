@@ -2,9 +2,28 @@
 
 ## Overview
 
-In this challenge, you'll be using the concepts you've learned to complete the required activity. This activity presents a real-world situation in which your newfound JavaScript skills will come in handy. You are tasked with creating code for analyzing the financial records of a company. You have been provided with a financial dataset in the `starter/index.js` file.
+this is the challenge:
+In this challenge, using the concepts learned to complete the required activity, this activity presents a real-world situation in which the newfound JavaScript skills will come in handy. The task is to create code for analyzing the financial records of a company using the provided financial dataset in the `starter/index.js` file.
 
-## Instructions
+
+## you can find the GitHub repo here:
+https://github.com/ranjmak/Console-Finances
+
+######
+
+## you can find the website here:
+https://ranjmak.github.io/Console-Finances/
+
+######
+
+
+## screenshot of the financial analysis results:
+![screenshot](/images/Screenshot-console-financials.png"screenshot of console financials")
+
+######
+
+
+## Instructions used to guide this assignment
 
 1. Create a new GitHub repo called `Console-Finances`. Then, clone it to your computer.
 
@@ -47,6 +66,8 @@ Your final code should print the analysis to the console.
 * Remember, in order to combine strings and variables in the console you will need to use **concatenation**.
 
 * How do you only print to the nearest 100th in JavaScript?
+
+
 
 ## Grading Requirements
 
