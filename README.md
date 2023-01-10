@@ -18,7 +18,7 @@ https://ranjmak.github.io/Console-Finances/
 
 
 ## screenshot of the financial analysis results:
-![screenshot](/images/Screenshot-console-financials.png"screenshot of console financials")
+![console financials screenshot](https://ranjmak.github.io/Console-Finances/images/Screenshot-console-financials.png)
 
 ######
 
